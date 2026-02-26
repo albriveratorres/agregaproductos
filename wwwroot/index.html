@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Productos</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        margin: 40px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      table thead {
+        background-color: #0d6efd; /* azul tipo Bootstrap */
+        color: white;
+        text-align: left;
+      }
+
+      table th,
+      table td {
+        padding: 12px 16px;
+      }
+
+      table th {
+        font-weight: 600;
+      }
+
+      table tbody tr {
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      table tbody tr:hover {
+        background-color: #f2f2f2;
+      }
+
+      table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 8px;
+      }
+
+      button {
+        cursor: pointer;
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background-color: #0b5ed7;
+      }
+
+      button:active {
+        background-color: #0a58ca;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Productos</h2>
+
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+
+    <h3>Agregar Producto</h3>
+
+    Nombre:
+
+    <input id="nombre" />
+
+    <br /><br />
+
+    Precio:
+
+    <input id="precio" type="number" />
+
+    <br /><br />
+
+    <button onclick="agregarProducto()">Agregar</button>
+
+    <script>
+      const API = "http://localhost:5207/api/productos";
+
+      async function cargarProductos() {
+        let respuesta = await fetch(API);
+
+        let productos = await respuesta.json();
+
+        let tbody = document.querySelector("#tabla tbody");
+
+        tbody.innerHTML = "";
+
+        productos.forEach((p) => {
+          let fila = `
+<tr>
+
+<td>${p.id}</td>
+
+<td>${p.nombre}</td>
+
+<td>${p.precio}</td>
+
+<td>
+
+<button onclick="eliminar(${p.id})">
+Eliminar
+</button>
+
+</td>
+
+</tr>
+`;
+
+          tbody.innerHTML += fila;
+        });
+      }
+
+      async function agregarProducto() {
+        let nombre = document.getElementById("nombre").value;
+
+        let precio = document.getElementById("precio").value;
+
+        await fetch(API, {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            nombre: nombre,
+
+            precio: parseFloat(precio),
+          }),
+        });
+
+        cargarProductos();
+      }
+
+      async function eliminar(id) {
+        await fetch(API + "/" + id, {
+          method: "DELETE",
+        });
+
+        cargarProductos();
+      }
+
+      cargarProductos();
+    </script>
+  </body>
+</html>

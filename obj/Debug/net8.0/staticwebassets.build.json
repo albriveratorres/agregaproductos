@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "l7ggu8B4W2ofS+TJ28pV7Hihsm13X+DtPLmgfOIAmlE=",
+  "Source": "ProductosApi",
+  "BasePath": "_content/ProductosApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProductosApi/wwwroot",
+      "Source": "ProductosApi",
+      "ContentRoot": "/home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/wwwroot/",
+      "BasePath": "_content/ProductosApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/wwwroot/index.html",
+      "SourceId": "ProductosApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/wwwroot/",
+      "BasePath": "_content/ProductosApi",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
+}
