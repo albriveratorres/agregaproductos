@@ -15,7 +15,7 @@ Git
 
 Clona el repositorio desde la rama main:
 
-git clone <URL_DEL_REPOSITORIO>
+git clone git@github.com:albriveratorres/agregaproductos.git
 cd productos-net-api
 git checkout main
 
@@ -70,3 +70,5 @@ Este proyecto usa:
 Base de datos en memoria (InMemory)
 
 Los datos se eliminan cuando se detiene la aplicación.
+
+para exportar datos en la segunda terminal hay que ejecutar el siguiente comando y se generara un archivo .json con el nombre productos.

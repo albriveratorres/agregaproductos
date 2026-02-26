@@ -35,3 +35,4 @@
 /home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/bin/Debug/net8.0/ProductosApi.staticwebassets.runtime.json
+/home/eddylap/Documentos/net 8/productos-net-api/ProductosApi/obj/Debug/net8.0/ProductosApi.sourcelink.json
